@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() => runApp(new MyApp());
 
@@ -12,18 +13,20 @@ class MyHomePage extends State<MyApp> {
   final TextEditingController _userController = new TextEditingController();
   final TextEditingController _passwordController = new TextEditingController();
   final TextEditingController _numberController = new TextEditingController();
+
   String usrName = "Suruch Boss";
   String passWord = "test01";
   String myNumber = "02-123-4567";
+  var children = [];
 
   void initState() {
     _userController.text = usrName;
     _passwordController.text = passWord;
     _numberController.text = myNumber;
+
     return super.initState();
   }
 
-  void onPressed() {}
   void goBack() {}
 
   void openConf() {}
@@ -35,6 +38,7 @@ class MyHomePage extends State<MyApp> {
     double marginLeft = 0.0;
     double marginRight = 0.0;
     double marginBut = 20.0;
+    double blursize = 3.0;
 
     Widget myPhoto = new Container(
       alignment: Alignment.center,
@@ -43,18 +47,17 @@ class MyHomePage extends State<MyApp> {
       height: picSize,
       width: picSize,
       child: new FlatButton(
-        child: new Container(
-          decoration: new BoxDecoration(
-            shape: BoxShape.circle,
-            image: new DecorationImage(
-                fit: BoxFit.cover, image: new AssetImage('images/sample.jpg')),
+          child: new Container(
+            decoration: new BoxDecoration(
+              shape: BoxShape.circle,
+              image: new DecorationImage(
+                  fit: BoxFit.cover,
+                  image: new AssetImage('images/sample.jpg')),
+            ),
           ),
-        ),
-        onPressed: () {
-          print("Hello");
-          // Perform some action
-        },
-      ),
+          onPressed: () {
+             
+          }),
     );
 
     Widget userName = new Container(
@@ -94,8 +97,6 @@ class MyHomePage extends State<MyApp> {
         ],
       ),
     );
-
-    double blursize = 3.0;
 
     return new MaterialApp(
       home: new Scaffold(
