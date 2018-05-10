@@ -18,17 +18,16 @@ class LoginState extends State<Login> {
   String passWord = "";
 
   double picSize = 200.0;
-  double marginTop = 10.0;
+  double marginTop = 20.0;
   double marginLeft = 0.0;
   double marginRight = 0.0;
-  double marginBut = 10.0;
+  double marginBut = 30.0;
 
   @override
   Widget build(BuildContext context) {
     Widget myPhoto = new Container(
       alignment: Alignment.center,
-      margin: new EdgeInsets.fromLTRB(
-          marginLeft, marginTop, marginRight, marginBut),
+      margin: new EdgeInsets.fromLTRB(marginLeft, marginTop, marginRight, marginBut),
       height: picSize,
       width: picSize,
       child: new Container(
@@ -38,7 +37,9 @@ class LoginState extends State<Login> {
     );
 
     Widget userName = new Container(
-      padding: const EdgeInsets.all(10.0),
+      alignment: Alignment.center,
+      margin: new EdgeInsets.fromLTRB(
+          marginLeft, marginTop, marginRight, marginBut),
       child: new Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -81,6 +82,7 @@ class LoginState extends State<Login> {
           children: [
             new Container(child: myPhoto),
             new Container(
+                padding: new EdgeInsets.all(5.0),
                 decoration: new BoxDecoration(color: grey700, boxShadow: [
                   new BoxShadow(
                     color: Colors.black,
@@ -89,6 +91,7 @@ class LoginState extends State<Login> {
                 ]),
                 child: userName),
             new Container(
+              margin: new EdgeInsets.all(60.0),
               child: new RaisedButton(
                 child: const Text('Login'),
                 color: Theme.of(context).accentColor,
@@ -98,6 +101,9 @@ class LoginState extends State<Login> {
                   Navigator.popAndPushNamed(context, '/screen2');
                 },
               ),
+              // new Expanded(
+              //   child: ,
+              // )
             )
           ],
         ),

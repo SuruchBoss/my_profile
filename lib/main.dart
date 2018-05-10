@@ -5,6 +5,7 @@ import 'package:my_profile/loginView.dart';
 
 void main() {
   runApp(new MaterialApp(
+    
     home: new Login(),
     routes: <String, WidgetBuilder>{
       '/screen1': (BuildContext context) => new Login(),
@@ -13,4 +14,3 @@ void main() {
     },
   ));
 }
-
