@@ -101,9 +101,11 @@ class LoginState extends State<Login> {
                   Navigator.popAndPushNamed(context, '/screen2');
                 },
               ),
-              // new Expanded(
-              //   child: ,
-              // )
+              new Expanded(
+                child: new Container(
+                  color: Colors.,
+                )
+              )
             )
           ],
         ),
